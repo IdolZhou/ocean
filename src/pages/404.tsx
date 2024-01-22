@@ -6,20 +6,11 @@
 * 💭Description: 404 page
 */
 
-import { Empty } from '@douyinfe/semi-ui';
 
-import {
-    IllustrationNotFound,
-    IllustrationNotFoundDark,
-} from '@douyinfe/semi-illustrations';
 
 export function NotFound() {
 
     return (
-        <Empty
-            image={<IllustrationNotFound />}
-            darkModeImage={<IllustrationNotFoundDark />}
-            description={'404'}
-        />
+        <>404</>
     );
 }

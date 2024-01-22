@@ -8,20 +8,10 @@
 
 
 
-import { Empty } from '@douyinfe/semi-ui';
-import {
-    IllustrationNoAccess,
-    IllustrationNoAccessDark,
-} from '@douyinfe/semi-illustrations';
+
 function AccessDenied() {
     return (
-
-        <Empty
-            image={<IllustrationNoAccess style={{ width: 150, height: 150 }} />}
-            darkModeImage={<IllustrationNoAccessDark style={{ width: 150, height: 150 }} />}
-            description={"You don't have permission to view this page."}
-        // style={emptyStyle}
-        />
+        <>未授权</>
     );
 }
 

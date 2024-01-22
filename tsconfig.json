@@ -12,7 +12,9 @@
       "@assets/*": ["./assets/*"],
       "@styles/*": ["./styles/*"],
       "@utils/*": ["./utils/*"],
-      "@stores/*": ["./stores/*"]
+      "@stores/*": ["./stores/*"],
+      "@i18n/*": ["./i18n/*"],
+      "@hooks/*": ["./hooks/*"]
     },
 
     /* Bundler mode */
