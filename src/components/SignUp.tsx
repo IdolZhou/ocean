@@ -1,11 +1,9 @@
 
-export interface ISignUpProps {
-}
 
-export function SignUp(props: ISignUpProps) {
+export function SignUp() {
     return (
-        <div>
+        <>
             注册页
-        </div>
+        </>
     );
 }

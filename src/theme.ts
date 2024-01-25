@@ -1,19 +1,23 @@
-import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { PaletteMode, ThemeOptions } from '@mui/material';
 
 // A custom theme for this app
-const theme = createTheme({
+export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
+    mode: mode,
     primary: {
       main: '#556cd6',
+      // #6C63FF
     },
     secondary: {
       main: '#19857b',
     },
     error: {
-      main: red.A400,
+      main: '#ff1744',
+    },
+  },
+  typography: {
+    button: {
+      textTransform: 'none',
     },
   },
 });
-
-export default theme;

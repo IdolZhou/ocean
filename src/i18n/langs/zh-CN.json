@@ -1,3 +1,8 @@
 {
-  "SIGNIN": "登录"
+  "SignIn": "登录",
+  "Comment": {
+    "Reply": "回复",
+    "Comment": "评论",
+    "Cancel": "取消"
+  }
 }

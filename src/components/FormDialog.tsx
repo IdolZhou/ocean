@@ -3,43 +3,30 @@ import {
     Dialog,
     DialogActions,
     DialogContent,
-    DialogContentText,
     DialogTitle,
     Tab,
     Tabs,
-    TextField
 } from '@mui/material';
 import { useState } from 'react';
 import { SignIn } from '@components/SignIn';
 import { SignUp } from '@components/SignUp';
 import { useDialogStore } from '@stores/dialog';
 
-
-export interface IDialogProps {
-}
-
-export function FormDialog(props: IDialogProps) {
+export function FormDialog() {
     // 从Store中获取状态值
     const visible = useDialogStore((state) => state.visible);
     const setVisible = useDialogStore((state) => state.setVisible);
-    const [value, setValue] = useState(0);
+    // 设置tabs选中项 0：登录；1：注册
+    const [index, setIndex] = useState(0);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
+    // Tabs 选中项改变事件
+    const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+        setIndex(newValue);
     };
-    const showDialog = () => {
-        setVisible(true);
-    };
-    const handleOk = () => {
-        setVisible(false);
-        console.log('Ok button clicked');
-    };
+
     const handleClose = () => {
         setVisible(false);
         console.log('Cancel button clicked');
-    };
-    const handleAfterClose = () => {
-        console.log('After Close callback executed');
     };
 
     return (
@@ -56,48 +43,31 @@ export function FormDialog(props: IDialogProps) {
                     console.log(email);
                     handleClose();
                 },
-            }}
-        >
+            }}>
             <DialogTitle>
-                <Tabs value={value} onChange={handleChange} />
-            </DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    To subscribe to this website, please enter your email address here. We
-                    will send updates occasionally.
-                </DialogContentText>
-                <TextField
-                    autoFocus
-                    required
-                    margin="dense"
-                    id="name"
-                    name="email"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                    variant="standard"
-                />
-                <TextField
-                    autoFocus
-                    required
-                    margin="dense"
-                    id="name"
-                    name="password"
-                    label="Password"
-                    type="password"
-                    fullWidth
-                    variant="standard"
-                />
-
-                {/* <Tabs value={value} onChange={handleChange} aria-label="disabled tabs example">
+                <Tabs value={index} onChange={handleChange} centered>
                     <Tab label="Sign In" />
                     <Tab label="Sign Up" />
-                </Tabs> */}
+                </Tabs>
+            </DialogTitle>
+            <DialogContent>
+                {index === 0 ? (<SignIn />) : (<SignUp />)}
             </DialogContent>
-            <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button type="submit">Subscribe</Button>
+            <DialogActions style={{ justifyContent: 'center' }}>
+                <Button type="submit" variant="contained">Subscribe</Button>
             </DialogActions>
+            {/* <Grid container>
+                <Grid item xs>
+                    <Link href="#" variant="body2">
+                        Forgot password?
+                    </Link>
+                </Grid>
+                <Grid item>
+                    <Link href="#" variant="body2">
+                        {"Don't have an account? Sign Up"}
+                    </Link>
+                </Grid>
+            </Grid> */}
         </Dialog>
     );
 }

@@ -1,3 +1,8 @@
 {
-  "SIGNIN": "Sign In"
+  "SignIn": "Sign In",
+  "Comment": {
+    "Reply": "Reply",
+    "Comment": "Comment",
+    "Cancel": "Cancel"
+  }
 }

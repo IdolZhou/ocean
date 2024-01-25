@@ -6,10 +6,7 @@
 * 💭Description: 404 page
 */
 
-
-
 export function NotFound() {
-
     return (
         <>404</>
     );

@@ -3,6 +3,7 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import { Article } from '@pages/Article';
 import { NotFound } from '@pages/404';
+import { Home } from '@pages/Home';
 
 const routes = [
     {
@@ -14,7 +15,7 @@ const routes = [
     },
     {
         path: '/home',
-        element: <>Home</>,
+        element: <Home />,
         meta: {
             title: 'home',
         }
