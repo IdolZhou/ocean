@@ -1,5 +1,12 @@
 {
-  "SignIn": "Sign In",
+  "SignIn": {
+    "SignIn": "Sign In",
+    "SignUp": "Sign Up",
+    "HaveAccount": "Already have an account? Sign in",
+    "NoAccount": "Don't have an account? Sign Up",
+    "ForgotPassword": "Forgot password?",
+    "RememberMe": "Remember me"
+  },
   "Comment": {
     "Reply": "Reply",
     "Comment": "Comment",

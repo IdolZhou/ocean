@@ -4,6 +4,7 @@ import {
     FormGroup,
     TextField
 } from '@mui/material';
+import { t } from 'i18next';
 
 
 export function SignIn() {
@@ -22,7 +23,6 @@ export function SignIn() {
                 variant="standard"
             />
             <TextField
-                autoFocus
                 required
                 margin='normal'
                 // id="password"
@@ -35,7 +35,7 @@ export function SignIn() {
             <FormGroup>
                 <FormControlLabel
                     control={<Checkbox color="primary" />}
-                    label="Remember me"
+                    label={t('SignIn.RememberMe')}
                 />
             </FormGroup>
         </>

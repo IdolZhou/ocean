@@ -1,5 +1,12 @@
 {
-  "SignIn": "登录",
+  "SignIn": {
+    "SignIn": "登录",
+    "SignUp": "注册",
+    "HaveAccount": "已经有帐户？登录",
+    "NoAccount": "没有帐户？注册",
+    "ForgotPassword": "忘记密码?",
+    "RememberMe": "记住我"
+  },
   "Comment": {
     "Reply": "回复",
     "Comment": "评论",

@@ -4,6 +4,8 @@ import {
     DialogActions,
     DialogContent,
     DialogTitle,
+    Grid,
+    Link,
     Tab,
     Tabs,
 } from '@mui/material';
@@ -11,6 +13,7 @@ import { useState } from 'react';
 import { SignIn } from '@components/SignIn';
 import { SignUp } from '@components/SignUp';
 import { useDialogStore } from '@stores/dialog';
+import { t } from 'i18next';
 
 export function FormDialog() {
     // 从Store中获取状态值
@@ -45,9 +48,9 @@ export function FormDialog() {
                 },
             }}>
             <DialogTitle>
-                <Tabs value={index} onChange={handleChange} centered>
-                    <Tab label="Sign In" />
-                    <Tab label="Sign Up" />
+                <Tabs centered value={index} onChange={handleChange} >
+                    <Tab label={t('SignIn.SignIn')} />
+                    <Tab label={t('SignIn.SignUp')} />
                 </Tabs>
             </DialogTitle>
             <DialogContent>
@@ -56,18 +59,30 @@ export function FormDialog() {
             <DialogActions style={{ justifyContent: 'center' }}>
                 <Button type="submit" variant="contained">Subscribe</Button>
             </DialogActions>
-            {/* <Grid container>
-                <Grid item xs>
-                    <Link href="#" variant="body2">
-                        Forgot password?
-                    </Link>
+            {index === 0 ? (
+                <Grid sx={{ display: 'flex', py: 2 }}>
+                    <Grid item xs sx={{ pl: 3 }}>
+                        <Link href="#" variant="body2">
+                            {t('SignIn.ForgotPassword')}
+                        </Link>
+                    </Grid>
+                    <Grid item sx={{ pr: 3 }}>
+                        <Link component="button" variant="body2" onClick={(event) => handleChange(event, 1)}>
+                            {t("SignIn.NoAccount")}
+                        </Link>
+                    </Grid>
                 </Grid>
-                <Grid item>
-                    <Link href="#" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                    </Link>
+            ) : (
+                <Grid container justifyContent="flex-end" sx={{ pr: 3, py: 2 }}>
+                    <Grid item>
+                        <Link component="button" variant="body2" onClick={(event) => handleChange(event, 0)}>
+                            {t("SignIn.HaveAccount")}
+                        </Link>
+                    </Grid>
                 </Grid>
-            </Grid> */}
+            )}
+
+
         </Dialog>
     );
 }

@@ -25,6 +25,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { useDialogStore } from '@stores/dialog';
 import { useModeStore } from '@stores/mode';
 import { useState } from 'react';
+import { t } from 'i18next';
 
 export function NavBar() {
     const setVisible = useDialogStore((state) => state.setVisible);
@@ -98,7 +99,7 @@ export function NavBar() {
                     variant="outlined"
                     sx={{ my: 1, mx: 1.5 }}
                     onClick={() => setVisible(true)}>
-                    Login
+                    {t("SignIn.SignIn")}
                 </Button>
             </Toolbar>
         </AppBar>
