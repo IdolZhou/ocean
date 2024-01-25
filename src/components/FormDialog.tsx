@@ -57,7 +57,9 @@ export function FormDialog() {
                 {index === 0 ? (<SignIn />) : (<SignUp />)}
             </DialogContent>
             <DialogActions style={{ justifyContent: 'center' }}>
-                <Button type="submit" variant="contained">Subscribe</Button>
+                <Button type="submit" variant="contained">{
+                    index === 0 ? t('SignIn.SignIn') : t('SignIn.SignUp')
+                }</Button>
             </DialogActions>
             {index === 0 ? (
                 <Grid sx={{ display: 'flex', py: 2 }}>

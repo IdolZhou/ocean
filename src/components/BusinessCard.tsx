@@ -10,19 +10,10 @@ import {
     Avatar,
     Box,
     Button,
-    Card,
-    CardActions,
-    CardContent,
-    CardHeader,
-    Divider,
-    IconButton,
-    Link,
     Typography,
 
 } from '@mui/material';
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import CommentIcon from '@mui/icons-material/Comment';
+
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import { t } from 'i18next';
 export interface IBusinessCardProps {
@@ -35,7 +26,7 @@ export function BusinessCard(props: IBusinessCardProps) {
                 <Avatar>R</Avatar>
                 <Typography sx={{ display: 'flex', alignItems: 'center', ml: 2 }}>Title</Typography>
                 <Button startIcon={<GroupAddIcon />} sx={{ ml: 'auto' }}>
-                    Follow
+                    {t('Comment.Follow')}
                 </Button>
 
             </Box>
