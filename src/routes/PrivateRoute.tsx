@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Navigate } from 'react-router-dom';
-import AccessDenied from '@pages/AccessDenied';
+import { AccessDenied } from '@pages/AccessDenied';
 
 export interface IPrivateRouteProps {
     /**
