@@ -6,10 +6,8 @@
 * 💭Description: Markdown博文内容显示组件
 */
 
-
 import { Box, Link, Typography } from '@mui/material';
-import ReactMarkdown from 'markdown-to-jsx';
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 
 export interface IMarkdownProps {
 }
